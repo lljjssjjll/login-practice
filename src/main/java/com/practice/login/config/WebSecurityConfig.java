@@ -78,6 +78,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.tokenRepository(this.persistentTokenRepository())
 			// 24시간 유지
 			.tokenValiditySeconds(1 * 24 * 60 * 60);
+			// 30초 유지
+			//.tokenValiditySeconds(30);
 		
 	}
 	
