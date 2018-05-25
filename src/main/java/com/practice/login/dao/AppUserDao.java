@@ -18,8 +18,10 @@ public class AppUserDao {
 	private EntityManager entityManager;
 	
 	public AppUser findUserAccount(String userName) {
-		String sql = "select au from " + AppUser.class.getName() + " au " +
-				"where au.userName = :userName";
+		String sql = ""
+				+ "select au "
+				+ "from " + AppUser.class.getName() + " au "
+				+ "where au.userName = :userName";
 		Query query = entityManager.createQuery(sql, AppUser.class);
 		query.setParameter("userName", userName);
 		try {

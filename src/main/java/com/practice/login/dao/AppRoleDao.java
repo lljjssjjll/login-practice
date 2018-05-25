@@ -19,8 +19,10 @@ public class AppRoleDao {
 	private EntityManager entityManager;
 	
 	public List<String> getRoleNames(Long userId) {
-		String sql = "select ur.appRole.roleName from " + UserRole.class.getName() + " ur " +
-				"where ur.appUser.userId = :userId";
+		String sql = ""
+				+ "select ur.appRole.roleName "
+				+ "from " + UserRole.class.getName() + " ur "
+				+ "where ur.appUser.userId = :userId";
 		Query query = entityManager.createQuery(sql, String.class);
 		query.setParameter("userId", userId);
 		return query.getResultList();
